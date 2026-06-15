@@ -1,0 +1,9 @@
+{
+  "name": "paper-seal-studio-marketing-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "bunx serve .",
+    "start": "bun run dev"
+  }
+}

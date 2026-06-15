@@ -1,0 +1,178 @@
+/* Theme layer only: tokens, colors, typography, and component presentation. */
+
+:root {
+  --color-background: #f4f4f0;
+  --color-surface: #fcfbf7;
+  --color-surface-strong: #203245;
+  --color-text: #222222;
+  --color-text-soft: #4c4c46;
+  --color-accent: #5f7a67;
+  --color-accent-strong: #4a6352;
+  --color-cta-text: #f8f8f4;
+  --color-border: rgba(34, 34, 34, 0.12);
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --shadow-soft: 0 18px 42px rgba(28, 39, 38, 0.12);
+  --shadow-card: 0 12px 30px rgba(28, 39, 38, 0.08);
+  --radius-card: 1.25rem;
+  --radius-button: 999px;
+}
+
+html {
+  background: var(--color-background);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  color: var(--color-text-soft);
+}
+
+.eyebrow,
+.section-label,
+.print-meta,
+.scroll-cue {
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.section-label,
+.scroll-cue {
+  color: var(--color-accent-strong);
+}
+
+.lede {
+  font-size: 1.15rem;
+  max-inline-size: 34rem;
+}
+
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.scroll-cue::after {
+  content: "\2193";
+  font-size: 1.1rem;
+}
+
+.hero-copy h1,
+.hero-copy .lede {
+  color: var(--color-text);
+}
+
+.hero-media img,
+.print-card {
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.print-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  padding: 0 0 1.25rem;
+}
+
+.print-card img {
+  margin-block-end: 0.25rem;
+}
+
+.print-card h3 {
+  color: var(--color-text);
+}
+
+.print-card .stack-xs {
+  padding-inline: 1.25rem;
+}
+
+.print-meta {
+  color: var(--color-accent-strong);
+}
+
+.cta-shell {
+  background: var(--color-surface-strong);
+}
+
+.cta-shell .section-label,
+.cta-shell h2,
+.cta-shell p {
+  color: var(--color-cta-text);
+}
+
+.cta-button {
+  border-radius: var(--radius-button);
+  background: var(--color-accent);
+  box-shadow: var(--shadow-card);
+  color: var(--color-cta-text);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+  background: var(--color-accent-strong);
+}
+
+.cta-button:focus-visible,
+.scroll-cue:focus-visible {
+  outline: 3px solid var(--color-cta-text);
+  outline-offset: 4px;
+}
+
+.cta-button:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 48rem) {
+  .lede {
+    font-size: 1.22rem;
+  }
+}
