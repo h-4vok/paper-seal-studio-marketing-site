@@ -41,16 +41,30 @@ main {
   padding-block: 4.5rem;
 }
 
+.cta-shell {
+  padding-inline: 1.5rem;
+  padding-block-start: 4rem;
+  padding-block-end: 5rem;
+}
+
+.site-footer {
+  padding-inline: 1.5rem;
+  padding-block: 3rem;
+  text-align: center;
+}
+
 .hero {
-  min-block-size: max(80vh, 42rem);
+  min-block-size: 85vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-layout {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .hero-copy,
@@ -60,8 +74,21 @@ main {
   inline-size: 100%;
 }
 
-.hero-media img {
-  aspect-ratio: 4 / 5;
+.hero-copy {
+  max-inline-size: 31.25rem;
+}
+
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  inline-size: fit-content;
+}
+
+.hero-media img,
+.print-card img {
+  aspect-ratio: 7 / 5;
   object-fit: cover;
 }
 
@@ -70,9 +97,8 @@ main {
   gap: 1.5rem;
 }
 
-.print-card img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.print-card h3 {
+  margin-block-start: 0.875rem;
 }
 
 .stack-xs > * + * {
@@ -108,12 +134,7 @@ main {
   }
 
   .hero-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 32rem);
     gap: 3rem;
-  }
-
-  .hero-media img {
-    aspect-ratio: 5 / 6;
   }
 
   .gallery-grid {
@@ -131,7 +152,28 @@ main {
     inline-size: min(100% - 4rem, 76rem);
   }
 
+  .hero-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+
+  .hero-copy {
+    flex: 1;
+  }
+
+  .hero-media {
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .print-card h3 {
+    margin-block-start: 1rem;
   }
 }
