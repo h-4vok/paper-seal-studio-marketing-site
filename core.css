@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
 }
@@ -18,10 +14,6 @@ img {
   display: block;
   inline-size: 100%;
   block-size: auto;
-}
-
-a {
-  text-decoration: none;
 }
 
 main {
@@ -82,7 +74,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 0.65rem;
   inline-size: fit-content;
 }
 
@@ -99,6 +91,15 @@ main {
 
 .print-card h3 {
   margin-block-start: 0.875rem;
+}
+
+.print-card {
+  overflow: hidden;
+  padding: 0 0 1.25rem;
+}
+
+.print-card .stack-xs {
+  padding-inline: 1.25rem;
 }
 
 .stack-xs > * + * {

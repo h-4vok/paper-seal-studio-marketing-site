@@ -23,19 +23,45 @@
   --radius-card: 0;
   --radius-image: 0;
   --radius-button: 999px;
+  --font-size-body: 18px;
+  --line-height-body: 1.65;
+  --letter-spacing-heading: -0.02em;
+  --line-height-heading: 1.1;
+  --font-size-h1: clamp(2.5rem, 6vw, 4.75rem);
+  --font-size-h2: clamp(2rem, 4.5vw, 3.25rem);
+  --font-size-h3: 1.6rem;
+  --font-size-label: 0.95rem;
+  --letter-spacing-label: 0.14em;
+  --font-size-lede: 1.15rem;
+  --font-size-lede-desktop: 1.22rem;
+  --font-size-scroll-cue-icon: 1.1rem;
+  --font-size-cta: 1rem;
+  --line-height-cta: 1.2;
+  --space-focus-ring-width: 3px;
+  --space-focus-ring-offset: 4px;
+  --motion-duration-fast: 160ms;
+  --motion-ease-standard: ease;
+  --transform-cta-hover: translateY(-3px);
+  --transform-cta-active: translateY(1px);
+  --shadow-card-hover: 0 16px 24px rgba(0, 0, 0, 0.2);
 }
 
 html {
   background: var(--color-background);
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
-  line-height: 1.65;
+  line-height: var(--line-height-body);
+}
+
+a {
+  text-decoration: none;
 }
 
 h1,
@@ -51,20 +77,20 @@ h2,
 h3 {
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: var(--font-size-h1);
 }
 
 h2 {
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: var(--font-size-h2);
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: var(--font-size-h3);
 }
 
 p {
@@ -75,9 +101,9 @@ p {
 .section-label,
 .print-meta,
 .scroll-cue {
-  font-size: 0.95rem;
+  font-size: var(--font-size-label);
   font-weight: var(--font-weight-bold);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
 }
 
@@ -88,19 +114,12 @@ p {
 }
 
 .lede {
-  font-size: 1.15rem;
-  max-inline-size: 34rem;
-}
-
-.scroll-cue {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
+  font-size: var(--font-size-lede);
 }
 
 .scroll-cue::after {
   content: "\2193";
-  font-size: 1.1rem;
+  font-size: var(--font-size-scroll-cue-icon);
 }
 
 .hero-copy h1,
@@ -109,9 +128,8 @@ p {
 }
 
 .hero-media img,
-.print-card img,
-.print-card {
-  border-radius: 0;
+.print-card img {
+  border-radius: var(--radius-image);
 }
 
 .hero-media img,
@@ -122,16 +140,11 @@ p {
 .print-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  overflow: hidden;
-  padding: 0 0 1.25rem;
+  border-radius: var(--radius-card);
 }
 
 .print-card h3 {
   color: var(--color-text);
-}
-
-.print-card .stack-xs {
-  padding-inline: 1.25rem;
 }
 
 .print-meta {
@@ -162,33 +175,36 @@ p {
   background: var(--color-cta-button-bg);
   box-shadow: var(--shadow-card);
   color: var(--color-cta-button-text);
-  font-size: 1rem;
+  font-size: var(--font-size-cta);
   font-weight: var(--font-weight-bold);
-  line-height: 1.2;
+  line-height: var(--line-height-cta);
   text-align: center;
-  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-standard),
+    color var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .cta-button:hover,
 .cta-button:focus-visible {
   background: var(--color-accent);
-  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-card-hover);
   color: var(--color-cta-text);
-  transform: translateY(-3px);
+  transform: var(--transform-cta-hover);
 }
 
 .cta-button:focus-visible,
 .scroll-cue:focus-visible {
-  outline: 3px solid var(--color-cta-text);
-  outline-offset: 4px;
+  outline: var(--space-focus-ring-width) solid var(--color-cta-text);
+  outline-offset: var(--space-focus-ring-offset);
 }
 
 .cta-button:active {
-  transform: translateY(1px);
+  transform: var(--transform-cta-active);
 }
 
 @media (min-width: 48rem) {
   .lede {
-    font-size: 1.22rem;
+    font-size: var(--font-size-lede-desktop);
   }
 }
