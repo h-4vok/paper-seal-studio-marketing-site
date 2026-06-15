@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "build": "bun run build.js",
     "dev": "bunx serve .",
     "start": "bun run dev"
   }
